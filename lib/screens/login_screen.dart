@@ -166,8 +166,6 @@ class LoginScreen extends StatelessWidget {
       ),
     );
   }
-
-  // ميثود بناء الزرار
   Widget _buildButton(String text, Color tColor, Color bColor) {
     return SizedBox(
       width: double.infinity,
@@ -182,8 +180,6 @@ class LoginScreen extends StatelessWidget {
       ),
     );
   }
-
-  // ميثود بناء الأعلام الدائرية
   Widget _buildFlagCircle(String flagEmoji, bool isActive) {
     return Container(
       width: 40,
