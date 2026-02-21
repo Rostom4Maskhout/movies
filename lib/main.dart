@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/screens/login_screen.dart'; // استدعي الشاشة هنا
+import 'package:movies_app/screens/login_screen.dart';
 
 void main() {
   runApp(const MyApp());
