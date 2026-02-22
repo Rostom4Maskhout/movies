@@ -1,6 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="movies"
+<<<<<<< HEAD
+        android:label="movies_task_1"
+=======
+        android:label="project_movies"
+>>>>>>> 0d00ed3be05baddeddc281ca94ba461aaf38b297
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
