@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:movies/screens/onboarding_screen/onboarding_screen.dart';
-import 'package:movies/utils/app_routes.dart';
- // adjust path if needed
+import 'package:movies_app/authentication/register_screen.dart';
+import 'package:movies_app/provider/app_language_provider.dart';
+import 'package:movies_app/utils/app-theme.dart';
+import 'package:movies_app/utils/app_routes.dart';
+import 'package:provider/provider.dart';
+
+import 'l10n/app_localizations.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => AppLanguageProvider()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -13,15 +23,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var languageProvider = Provider.of<AppLanguageProvider>(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Movie App',
-
-      initialRoute: AppRoutes.onBoardingScreenName,
-      routes: {
-        AppRoutes.onBoardingScreenName: (context) => OnboardingScreen(),
-
-      },
+      initialRoute: AppRoutes.registerScreen,
+      routes: {AppRoutes.registerScreen: (context) => RegisterScreen()},
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      locale: Locale(languageProvider.appLanguage),
+      theme: AppTheme.darkTheme,
+      darkTheme: AppTheme.darkTheme,
+      themeMode: ThemeMode.dark,
     );
   }
 }

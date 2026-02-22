@@ -1,6 +1,3 @@
 class AppRoutes {
-  static const homeScreenName = "home_screen";
-  static const onBoardingScreenName = "onBoarding_screen";
-
-
+  static const String registerScreen = 'register_screen';
 }
